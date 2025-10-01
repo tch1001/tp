@@ -13,7 +13,6 @@ We are a team based in the [School of Computing, National University of Singapor
 
 <img src="images/baozzii.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg)]
 [[github](https://github.com/baozzii)]
 
 * Role: Project Developer
