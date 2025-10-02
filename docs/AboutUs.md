@@ -14,3 +14,39 @@ We are a team based in the [School of Computing, National University of Singapor
 <img src="images/baozzii.png" width="200px">
 
 [[github](https://github.com/baozzii)]
+### Yang Iiyu
+
+<img src="images/poeticpotatoes.png" width="200px">
+
+[[github](http://github.com/POeticPotatoes)]
+
+* Role: Developer
+* Responsibilities: Funky
+
+### Tan Chien Hao
+
+<img src="images/tanchienhao.png" width="200px">
+
+[[github](https://github.com/tch1001)]
+
+* Role: Developer
+* Responsibilities: UI
+
+### Isaiah Toh
+
+<img src="images/isaiahtoh.png" width="200px">
+
+[[github](http://github.com/IsaiahToh)]
+
+* Role: Developer
+* Responsibilities: UI
+
+### Timothy Szu
+
+<img src="images/timothyszu.png" width="200px">
+
+
+[[github](https://github.com/TimothySzu)]
+
+
+* Role: Developer
