@@ -11,6 +11,15 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ## Project team
 
+### Yang Iiyu
+
+<img src="images/poeticpotatoes.png" width="200px">
+
+[[github](http://github.com/POeticPotatoes)]
+
+* Role: Developer
+* Responsibilities: Funky
+
 ### Tan Chien Hao
 
 <img src="images/tanchienhao.png" width="200px">
