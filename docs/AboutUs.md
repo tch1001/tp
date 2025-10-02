@@ -11,6 +11,14 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ## Project team
 
+### Tan Chien Hao
+
+<img src="images/tanchienhao.png" width="200px">
+
+[[github](https://github.com/tch1001)]
+
+* Role: Developer
+* Responsibilities: UI
 
 ### Isaiah Toh
 
@@ -30,5 +38,3 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 
 * Role: Developer
-
-
