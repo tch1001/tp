@@ -282,48 +282,100 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Value proposition**: manage contacts faster than a typical mouse/GUI driven app
 
+Organ donation is time-critical and requires a recipient to be present within hours of organ availability. Organ-iser solves coordination and prioritization challenges that donor coordinators face. Currently, patient information is scattered, databases, or manual notes. That makes it slow and error-prone when finding suitable recipients when a donor becomes available.
 
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                 | So that I can…​                                                        |
+| Priority | As a …                                    | I want to …                 | So that I can…                                                        |
 |----------|--------------------------------------------|------------------------------|------------------------------------------------------------------------|
-| `* * *`  | new user                                   | see usage instructions       | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person             |                                                                        |
-| `* * *`  | user                                       | delete a person              | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name        | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name         | locate a person easily                                                 |
+|`***`|Organ transplant coordinator|search up patients by organ|I can quickly connect them with the available donor
+|`***`|Organ transplant coordinator|delete patients from my list|I can clear discharged patients from the database
+|`**`|Organ transplant coordinator|search up patients by compatible blood type|I can check for donor compatibility
+|`*`|Organ transplant coordinator|search up patients by address|I can filter the nearest patients that need transplant with respect to the donor
+|`**`|Organ transplant coordinator|add an excel list of patient information to the database|I can automate adding patients
+|`***`|Organ transplant coordinator|quickly navigate through the pages of the application|I can search for patients quickly
+|`**`|Organ transplant coordinator|automatically match donors to possible recipients|I can find recipients more quickly
+|`**`|Organ transplant coordinator|edit current entries of patient details|I can update old details of the patients
+|`*`|Organ transplant coordinator|receive real-time alerts when a new donor becomes available|I can act immediately without delays
+|`*`|Organ transplant coordinator|provide estimated transport times for organs|I can match donors and recipients within viable windows
+|`*`|Organ transplant coordinator|access the system from a mobile device|I can respond to urgent cases even when I’m away from my desk
+|`**`|Organ transplant coordinator|generate summaries of matching recipients|I can communicate options efficiently with medical teams
+|`*`|Organ transplant coordinator|archive (instead of permanently delete) patient records|I can maintain a history for auditing and future reference
+|`**`|Organ transplant coordinator|mark patients as “urgent priority”|I can easily identify critical cases
+|`*`|Organ transplant coordinator|track the transplant status (waiting, matched, transplanted, follow-up)|I can monitor each patient’s journey
+|`**`|Organ transplant coordinator|filter patients by multiple criteria (e.g., organ + blood type + urgency)|I can narrow down possible matches more efficiently
+|`**`|Organ transplant coordinator|automatically check donor-recipient compatibility based on medical criteria (HLA match, age, weight, etc.)|I don’t have to cross-check manually
+|`*`|Organ transplant coordinator|view ranked compatibility scores for each potential recipient|I can make more informed decisions
+|`*`|Organ transplant coordinator|send notifications to doctors and hospitals directly from the system|I can coordinate transplant logistics quickly
+|`*`|Organ transplant coordinator|set reminders for patient follow-ups|I don’t miss critical post-transplant checks
+|`**`|Organ transplant coordinator|get notified when patient details are incomplete|I can ensure accurate data for matching
+|`*`|Organ transplant coordinator|generate monthly/ weekly reports on donor-recipient matches|I can analyze system performance and outcomes
+|`**`|Organ transplant coordinator|export patient and donor data into secure formats (Excel, PDF)|I can share them with authorized stakeholders
+|`*`|Organ transplant coordinator|view a log of all action history (adding, editing, deleting patients)|I can maintain compliance and traceability
+|`**`|Organ transplant coordinator|receive command completion prompts|I can use the system without remembering all of its commands
+|`**`|Organ transplant coordinator|re-enter previous commands without needing to retype them|I can perform my patient coordination faster even if I make mistakes
+|`*`|Organ transplant coordinator|mass upload patient data even if there is overlapping patient info|old patient logs can be combined without causing issues
+|`***`|Organ transplant coordinator|add individual new patients from the command line|I can update the system for individual new patients
+|`*`|Organ transplant coordinator|see the output of the last search I previously performed when I reopen the application|I can continue my work where I left off
 
 *{More to be added}*
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `Organ-iser` and the **Actor** is the `Coordinator`, unless specified otherwise)
 
-**Use case: Delete a person**
+**Use Case: Matching a donor to a patient**  
 
 **MSS**
+1. Coordinator receives notification about a willing organ donor.
+2. Coordinator searches for patients which need that organ.
+3. Organ-iser returns a list of  suitable patients.
+4. The coordinator selects one patient to be matched to the donor.
+5. Coordinator uses the patient’s contact details stored in the app to contact the patient for transplant.  
 
-1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+   Use case ends.  
 
-    Use case ends.
+**Extensions**  
+
+1. Organ-iser returned an empty list.
+2. Coordinator notifies the organ donor that no patients match his donation, and no transplant is organised.  
+    
+
+**Use Case: Marking a recipient as urgent priority**  
+
+**MSS**
+1. Coordinator is notified that a patient is identified as urgently in need of the organ transplant.
+2. Coordinator edits the patient’s existing record to mark it as urgent.
+3. Organ-iser ranks patients by urgency when listing.  
+
+   Use case ends.  
+  
+**Use Case: A new patient requires organ transplant**    
+
+**MSS**
+1. Coordinator wants to add a new patient.
+2. Coordinator adds patient’s details to the Organ-iser.  
+
+   Use case ends.  
 
 **Extensions**
+* 2a. Organ-iser recognises duplicate entry and returns error.  
+  
 
-* 2a. The list is empty.
+**Use Case: Patient no longer requires transplant**  
 
-  Use case ends.
+**MSS**
+1. Coordinator removes the patient’s entry.
+2. Patient’s entry is deleted from Organ-iser.  
 
-* 3a. The given index is invalid.
+   Use case ends.  
 
-    * 3a1. AddressBook shows an error message.
-
-      Use case resumes at step 2.
+**Extensions**
+* 1a. The patient still requires other organs.
+    * 1a1. The Coordinator removes only the organ no longer required by the patient.
+    * 1a2. Organ-iser deletes the organ.  
 
 *{More to be added}*
 
@@ -332,6 +384,17 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
 2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+4.  All patients’, donors’, and recipients’ data should be encrypted for data privacy.
+5.  Gracefully resolve system crashes with no data loss.
+6.  Accepts multiple data formats (.csv, .xlsx, .json), and allows exports in multiple data formats (.pdf, etc.).
+7.  Should hold up at least 10000 entries without any noticeable delays.
+8.  Should be able to display at least 2 profiles at once even at minimum window size
+9.  Should be able to handle international phone numbers
+10. Must display a start screen within 5s of launching the app
+11. All available patient info must be formatted correctly to fit the profile listings page
+12. Compatible blood types must be correctly identified for a particular search
+13. Should automatically log all actions for compliance, and ensure all logs are immutable.
+
 
 *{More to be added}*
 
