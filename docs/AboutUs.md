@@ -25,7 +25,7 @@ We are a team based in the [School of Computing, National University of Singapor
 
 ### Tan Chien Hao
 
-<img src="images/tanchienhao.png" width="200px">
+<img src="images/tch1001.png" width="200px">
 
 [[github](https://github.com/tch1001)]
 
